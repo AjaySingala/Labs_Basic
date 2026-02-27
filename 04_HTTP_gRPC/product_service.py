@@ -10,7 +10,11 @@ class Product(BaseModel):
     name: str
     price: float
 
-products: Dict[int, Product] = {}
+#products: Dict[int, Product] = {}
+products = {
+    1: ("Laptop", 2000),
+    2: ("Mobile", 1000)
+}
 
 @app.post("/products")
 def create_product(product: Product):
