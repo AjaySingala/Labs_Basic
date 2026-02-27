@@ -1,3 +1,5 @@
+Docker:
+=======
 docker version
 docker --version
 docker info
@@ -47,4 +49,50 @@ docker compose up --detach
 docker run -d -p 5000:3000 <image_name>
 
 docker ps
+
+Kubernetes:
+===========
+kubectl get pods
+
+kubectl run mynginx --image=nginx
+kubectl describe pod <pod name> 
+kubectl describe pod mynginx
+ 
+kubectl get pod <podname>
+kubectl get pod <podname> -o wide
+kubectl get pod <podname> -o yaml
+kubectl get pod <podname> -o yaml > pod.yaml
+
+kubectl create -f pod.yaml
+
+kubectl get deployment
+kubectl get deploy
+
+kubectl create deployment <deployment name> --image:<image name>
+kubectl create deployment nginx-dep --image:nginx:latest
+
+kubectl create deploy nginx-dep --image:nginx:latest
+
+kubectl get deploy nginx-dep -o wide
+kubectl get deploy nginx-dep -o yaml
+
+# Change Replicas to 3 in dep.yaml. Save.
+kubectl apply -r dep.yaml
+kubectl get pods
+kubectl get deploy
+
+# Delete a pod
+kubectl delete pod <pod name>
+kubectl get pods
+# shows 3 pods
+
+
+
+
+
+
+
+
+
+
 
