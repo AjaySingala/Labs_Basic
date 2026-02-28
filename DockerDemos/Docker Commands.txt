@@ -86,13 +86,5 @@ kubectl delete pod <pod name>
 kubectl get pods
 # shows 3 pods
 
-
-
-
-
-
-
-
-
-
+kubectl scale deployments/ngix-dep --replicas=5
 
